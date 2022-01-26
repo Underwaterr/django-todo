@@ -8,8 +8,7 @@ class TodoSerializer(serializers.ModelSerializer):
         model = Todo
         fields = ['name', 'tasks']
 
-class TaskSerializer(serializers.ModelSerializer): 
-    todo = serializers.HyperlinkedRelatedField(view_name='todo-detail', read_only=True)
+class TaskSerializer(serializers.HyperlinkedModelSerializer): 
 
     class Meta:
         model = Task
